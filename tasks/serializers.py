@@ -10,7 +10,7 @@ class TaskSerializer(serializers.ModelSerializer):
         read_only_fields = ["owner", "created_at"]
 
 
-class UserRegistrationSerializer(serializer.ModelSerializer):
+class UserRegistrationSerializer(serializers.ModelSerializer):
     # This line protects the password by hiding it from being accidentally returned.
     password = serializers.CharField(write_only=True)
 

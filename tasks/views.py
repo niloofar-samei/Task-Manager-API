@@ -11,9 +11,10 @@ class TaskListCreateView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Task.objects.filter(owner=self.rquest.user)
+        return Task.objects.filter(owner=self.request.user)
 
-    def preform_create(self, serializer):
+    def perform_create(self, serializer):
+        print("Request user:", self.request.user)
         serializer.save(owner=self.request.user)
 
 

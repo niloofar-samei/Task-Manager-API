@@ -7,6 +7,6 @@ from .views import (
 
 urlpatterns = [
     path("tasks/", TaskListCreateView.as_view(), name="task-list-create"),
-    path("register/", UserRegistrationView.as_view(), name="user-register"),
     path("tasks/<int:pk>/", TaskRetriveUpdateDestroyView.as_view(), name="task-detail"),
+    path("register/", UserRegistrationView.as_view(), name="user-register"),
 ]
